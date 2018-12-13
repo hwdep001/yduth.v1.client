@@ -1,34 +1,109 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { GooglePlus } from '@ionic-native/google-plus';
+
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+// environment
+import { environment } from './../environments/environment';
+
+// providers
+import { CommonProvider } from './../providers/common-provider';
+import { AuthProvider } from './../providers/auth-provider';
+import { HomeProvider } from './../providers/home-provider';
+import { SubProvider } from './../providers/sub-provider';
+import { CatProvider } from './../providers/cat-provider';
+import { LecProvider } from './../providers/lec-provider';
+import { WordProvider } from './../providers/word-provider';
+import { SettingProvider } from './../providers/setting-provider';
+
+// pages
+import { BackgroundPage } from './../pages/background/background';
+import { SignInPage } from './../pages/sign-in/sign-in';
+import { HomePage } from './../pages/home/home';
+import { CatListPage } from './../pages/cat-list/cat-list';
+import { LecListPage } from './../pages/lec-list/lec-list';
+import { WordSearchPage } from './../pages/word/search/word-search';
+import { SpListPage } from './../pages/word/sp-list/sp-list';
+import { SllwListPage } from './../pages/word/sllw-list/sllw-list';
+import { KwListPage } from './../pages/word/kw-list/kw-list';
+import { CcListPage } from './../pages/word/cc-list/cc-list';
+import { C4ListPage } from './../pages/word/c4-list/c4-list';
+import { EwListPage } from './../pages/word/ew-list/ew-list';
+import { SettingTabPage } from './../pages/setting/setting-tab';
+import { InfoPage } from './../pages/setting/info/info';
+import { WordMngPage } from './../pages/setting/word-mng/word-mng';
+import { LevelReset } from './../pages/setting/level-reset/level-reset';
 
 @NgModule({
   declarations: [
     MyApp,
+    BackgroundPage,
+    SignInPage,
     HomePage,
-    ListPage
+    CatListPage,
+    LecListPage,
+    WordSearchPage,
+    SpListPage,
+    SllwListPage,
+    KwListPage,
+    CcListPage,
+    C4ListPage,
+    EwListPage,
+    SettingTabPage,
+    InfoPage,
+    WordMngPage,
+    LevelReset
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    IonicModule.forRoot(MyApp, { tabsPlacement: 'top' }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    BackgroundPage,
+    SignInPage,
     HomePage,
-    ListPage
+    CatListPage,
+    LecListPage,
+    WordSearchPage,
+    SpListPage,
+    SllwListPage,
+    KwListPage,
+    CcListPage,
+    C4ListPage,
+    EwListPage,
+    SettingTabPage,
+    InfoPage,
+    WordMngPage,
+    LevelReset
   ],
   providers: [
+    GooglePlus,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CommonProvider,
+    AuthProvider,
+    HomeProvider,
+    SubProvider,
+    CatProvider,
+    LecProvider,
+    WordProvider,
+    SettingProvider
   ]
 })
 export class AppModule {}

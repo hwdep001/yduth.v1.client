@@ -19,3 +19,35 @@ System:
    npm               : 5.6.0
    OS                : Windows 10
 ```
+
+
+
+## [Status Bar](https://ionicframework.com/docs/native/status-bar/)
+```
+$ ionic cordova plugin add cordova-plugin-statusbar
+$ npm install --save @ionic-native/status-bar
+```
+
+
+## [Splash Screen](https://ionicframework.com/docs/native/splash-screen/)
+```
+$ ionic cordova plugin add cordova-plugin-splashscreen
+$ npm install --save @ionic-native/splash-screen
+```
+
+
+## [AngularFire2](https://github.com/angular/angularfire2/blob/master/docs/ionic/v3.md)
+```
+$ npm install firebase @angular/fire promise-polyfill --save
+```
+
+
+## [Google Plus] (https://ionicframework.com/docs/native/google-plus/)
+```
+$ ionic cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=yourReversedClientID --variable WEB_APPLICATION_CLIENT_ID=yourwebapplicationclientid
+$ npm install --save @ionic-native/google-plus
+```
+
+
+
+
