@@ -42,7 +42,7 @@ $ npm install firebase @angular/fire promise-polyfill --save
 ```
 
 
-## [Google Plus] (https://ionicframework.com/docs/native/google-plus/)
+## [Google Plus](https://ionicframework.com/docs/native/google-plus/)
 ```
 $ ionic cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=yourReversedClientID --variable WEB_APPLICATION_CLIENT_ID=yourwebapplicationclientid
 $ npm install --save @ionic-native/google-plus

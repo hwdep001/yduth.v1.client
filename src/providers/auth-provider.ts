@@ -111,6 +111,7 @@ export class AuthProvider {
 
   signOut() {
     this.user_ = null;
+    this.gplus.disconnect();
     this.afAuth.auth.signOut();
   }
 
