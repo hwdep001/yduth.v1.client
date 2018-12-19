@@ -26,19 +26,17 @@ import { LecProvider } from './../providers/lec-provider';
 import { WordProvider } from './../providers/word-provider';
 import { SettingProvider } from './../providers/setting-provider';
 
+// components
+import { ComponentsModule } from './../components/components.module';
+
 // pages
 import { BackgroundPage } from './../pages/background/background';
 import { SignInPage } from './../pages/sign-in/sign-in';
 import { HomePage } from './../pages/home/home';
 import { CatListPage } from './../pages/cat-list/cat-list';
 import { LecListPage } from './../pages/lec-list/lec-list';
-import { WordSearchPage } from './../pages/word/search/word-search';
-import { SpListPage } from './../pages/word/sp-list/sp-list';
-import { SllwListPage } from './../pages/word/sllw-list/sllw-list';
-import { KwListPage } from './../pages/word/kw-list/kw-list';
-import { CcListPage } from './../pages/word/cc-list/cc-list';
-import { C4ListPage } from './../pages/word/c4-list/c4-list';
-import { EwListPage } from './../pages/word/ew-list/ew-list';
+import { WordListPage } from './../pages/word-list/word-list';
+import { WordSearchPage } from './../pages/word-search/word-search';
 import { SettingTabPage } from './../pages/setting/setting-tab';
 import { InfoPage } from './../pages/setting/info/info';
 import { WordMngPage } from './../pages/setting/word-mng/word-mng';
@@ -52,13 +50,8 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     HomePage,
     CatListPage,
     LecListPage,
+    WordListPage,
     WordSearchPage,
-    SpListPage,
-    SllwListPage,
-    KwListPage,
-    CcListPage,
-    C4ListPage,
-    EwListPage,
     SettingTabPage,
     InfoPage,
     WordMngPage,
@@ -69,7 +62,8 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     HttpClientModule,
     IonicModule.forRoot(MyApp, { tabsPlacement: 'top' }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -79,13 +73,8 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     HomePage,
     CatListPage,
     LecListPage,
+    WordListPage,
     WordSearchPage,
-    SpListPage,
-    SllwListPage,
-    KwListPage,
-    CcListPage,
-    C4ListPage,
-    EwListPage,
     SettingTabPage,
     InfoPage,
     WordMngPage,

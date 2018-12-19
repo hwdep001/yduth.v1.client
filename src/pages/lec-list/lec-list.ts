@@ -10,13 +10,8 @@ import { Sub } from './../../models/Sub';
 import { Cat } from './../../models/Cat';
 import { Lec } from './../../models/Lec';
 
-import { SpListPage } from './../word/sp-list/sp-list';
-import { SllwListPage } from './../word/sllw-list/sllw-list';
-import { KwListPage } from './../word/kw-list/kw-list';
-import { CcListPage } from './../word/cc-list/cc-list';
-import { C4ListPage } from './../word/c4-list/c4-list';
-import { EwListPage } from './../word/ew-list/ew-list';
-import { WordSearchPage } from './../word/search/word-search';
+import { WordListPage } from './../word-list/word-list';
+import { WordSearchPage } from './../word-search/word-search';
 
 @Component({
   selector: 'page-lecList',
@@ -62,27 +57,7 @@ export class LecListPage {
       sc: new SearchCondition(this.sub, this.cat, lec, lecIds, levIds, count, false, this._auth.uid)
     }
 
-    switch(this.sub.id) {
-      case "sp":
-        this.navCtrl.push(SpListPage, params);
-        break;
-      case "sl":
-      case "lw":
-        this.navCtrl.push(SllwListPage, params);
-        break;
-      case "kw":
-        this.navCtrl.push(KwListPage, params);
-        break;
-      case "cc":
-        this.navCtrl.push(CcListPage, params);
-        break;
-      case "c4":
-        this.navCtrl.push(C4ListPage, params);
-        break;
-      case "ew":
-        this.navCtrl.push(EwListPage, params);
-        break;
-    }
+    this.navCtrl.push(WordListPage, params);
   }
 
   moveWordTestPage(): void {
