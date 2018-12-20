@@ -28,6 +28,7 @@ import { SettingProvider } from './../providers/setting-provider';
 
 // components
 import { ComponentsModule } from './../components/components.module';
+import { WordListPageModule } from './../pages/word-list/word-list.module';
 
 // pages
 import { BackgroundPage } from './../pages/background/background';
@@ -35,6 +36,7 @@ import { SignInPage } from './../pages/sign-in/sign-in';
 import { HomePage } from './../pages/home/home';
 import { CatListPage } from './../pages/cat-list/cat-list';
 import { LecListPage } from './../pages/lec-list/lec-list';
+import { WordSearchPage } from './../pages/word-search/word-search';
 import { SettingTabPage } from './../pages/setting/setting-tab';
 import { InfoPage } from './../pages/setting/info/info';
 import { WordMngPage } from './../pages/setting/word-mng/word-mng';
@@ -48,6 +50,7 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     HomePage,
     CatListPage,
     LecListPage,
+    WordSearchPage,
     SettingTabPage,
     InfoPage,
     WordMngPage,
@@ -59,7 +62,8 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     IonicModule.forRoot(MyApp, { tabsPlacement: 'top' }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    ComponentsModule
+    ComponentsModule,
+    WordListPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,6 +73,7 @@ import { LevelReset } from './../pages/setting/level-reset/level-reset';
     HomePage,
     CatListPage,
     LecListPage,
+    WordSearchPage,
     SettingTabPage,
     InfoPage,
     WordMngPage,
