@@ -1,5 +1,5 @@
 <ion-split-pane when="md">
-  <ion-menu [content]="content" *ngIf="this._auth.isAuth">
+  <ion-menu [content]="content" [swipeEnabled]="false" *ngIf="this._auth.isAuth">
     <ion-header>
       <ion-toolbar>
         <ion-title>{{menuTitle.header}}</ion-title>

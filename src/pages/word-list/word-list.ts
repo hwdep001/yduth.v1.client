@@ -31,6 +31,9 @@ export class WordListPage {
   levs: Array<number>;
   selectLevs: Array<number>;
 
+  //
+  randomFlag: boolean;
+
   constructor(
     private param: NavParams,
     private alertCtrl: AlertController,
@@ -46,6 +49,7 @@ export class WordListPage {
     this.setTitle();
     this.getWords();
     this.setLevelFilter();
+    this.setRandomFlag();
 
     this.isDataLoaded = true;
   }
@@ -101,6 +105,10 @@ export class WordListPage {
     this.selectLevs = this.levs;
   }
 
+  setRandomFlag(): void {
+    this.randomFlag = this.sc.randomed;
+  }
+
   updateLevel($event): void {
     const word = $event.word;
     const thumbCode = $event.thumbCode;
@@ -120,11 +128,13 @@ export class WordListPage {
 
   orderQue(): void {
     this.sc.randomed = false;
+    this.setRandomFlag();
     this.getWords();
   }
 
   shuffleQue(): void {
     this.sc.randomed = true;
+    this.setRandomFlag();
     this.getWords();
   }
 

@@ -7,12 +7,12 @@
 
         <ion-buttons end (click)="orderQue()">
             <button ion-button icon-only>
-                <ion-icon name="list"></ion-icon>
+                <ion-icon [color]="randomFlag ? '' : 'danger'" name="list"></ion-icon>
             </button>
         </ion-buttons>
         <ion-buttons end (click)="shuffleQue()">
             <button ion-button icon-only>
-                <ion-icon name="refresh"></ion-icon>
+                <ion-icon [color]="randomFlag ? 'danger' : ''" name="refresh"></ion-icon>
             </button>
         </ion-buttons>
         <ion-buttons end (click)="fliterQue()">
