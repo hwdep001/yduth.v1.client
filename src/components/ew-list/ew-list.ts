@@ -9,6 +9,7 @@ import { Word } from './../../models/Word';
 export class EwListComponent {
  
   _words: Array<Word>;
+  _levFlag: boolean;
 
   @Output() 
   updateLevel: EventEmitter<any> = new EventEmitter();
@@ -26,6 +27,11 @@ export class EwListComponent {
     }
     
     this._words = words;
+  }
+
+  @Input()
+  set levFlag(levFlag: boolean) {
+    this._levFlag = levFlag;
   }
 
   clickThumbs(word: Word, thumbCode: number): void {

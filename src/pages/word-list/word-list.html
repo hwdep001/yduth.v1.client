@@ -20,6 +20,11 @@
                 <ion-icon [color]="filterFlag ? 'danger' : ''" name="options"></ion-icon>
             </button>
         </ion-buttons>
+        <ion-buttons end (click)="fliterLev()">
+            <button ion-button icon-only>
+                <ion-icon [color]="levFlag ? '' : 'danger'" [name]="levFlag ? 'eye' : 'eye-off'"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -29,31 +34,31 @@
         <ng-container [ngSwitch]="sc.sub.id">
 
             <ng-container *ngSwitchCase="'sp'">
-                <sp-list [words]="words" (updateLevel)="updateLevel($event)"></sp-list>
+                <sp-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></sp-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'sl'">
-                <sllw-list [words]="words" (updateLevel)="updateLevel($event)"></sllw-list>
+                <sllw-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></sllw-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'lw'">
-                <sllw-list [words]="words" (updateLevel)="updateLevel($event)"></sllw-list>
+                <sllw-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></sllw-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'kw'">
-                <kw-list [words]="words" (updateLevel)="updateLevel($event)"></kw-list>
+                <kw-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></kw-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'cc'">
-                <cc-list [words]="words" (updateLevel)="updateLevel($event)"></cc-list>
+                <cc-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></cc-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'c4'">
-                <c4-list [words]="words" (updateLevel)="updateLevel($event)"></c4-list>
+                <c4-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></c4-list>
             </ng-container>
 
             <ng-container *ngSwitchCase="'ew'">
-                <ew-list [words]="words" (updateLevel)="updateLevel($event)"></ew-list>
+                <ew-list [words]="words" [levFlag]="levFlag" (updateLevel)="updateLevel($event)"></ew-list>
             </ng-container>
         </ng-container>
 

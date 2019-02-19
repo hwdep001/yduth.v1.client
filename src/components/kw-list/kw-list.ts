@@ -9,6 +9,7 @@ import { Word } from './../../models/Word';
 export class KwListComponent {
 
   _words: Array<Word>;
+  _levFlag: boolean;
   
   @Output() 
   updateLevel: EventEmitter<any> = new EventEmitter();
@@ -30,6 +31,11 @@ export class KwListComponent {
     }
 
     this._words = words;
+  }
+
+  @Input()
+  set levFlag(levFlag: boolean) {
+    this._levFlag = levFlag;
   }
 
   private createMeString(word: Word): string {

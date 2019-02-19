@@ -33,6 +33,7 @@ export class WordListPage {
 
   //
   randomFlag: boolean;
+  levFlag: boolean = true;
 
   constructor(
     private param: NavParams,
@@ -174,6 +175,10 @@ export class WordListPage {
       }
 
     }).catch(() => null);
+  }
+
+  fliterLev(): void {
+    this.levFlag = !this.levFlag;
   }
 
   filterWords(): Array<Word> {
