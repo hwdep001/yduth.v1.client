@@ -1,5 +1,5 @@
 <div class="icontent-middle" *ngFor="let word of _words; let i = index">
-  <ion-card class="icard" text-wrap [ngClass]="_levFlag ? 'icard-border' + word.levelId : ''">
+  <ion-card class="icard" text-wrap [ngClass]="!_levFlag && !word.flag1 ? '' : 'icard-border' + word.levelId">
     <!-- ///////////////////////////////////////////////////////////////////// -->
     <div *ngIf="word.flag1 == false" (click)="word.flag1 = true">
       <ion-row class="icard-que">
