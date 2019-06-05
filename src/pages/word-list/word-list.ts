@@ -33,7 +33,7 @@ export class WordListPage {
 
   //
   randomFlag: boolean;
-  levFlag: boolean = true;
+  levFlag: boolean;
 
   constructor(
     private param: NavParams,
@@ -50,6 +50,7 @@ export class WordListPage {
     this.setTitle();
     this.getWords();
     this.setLevelFilter();
+    this.setLevelFlag();
     this.setRandomFlag();
 
     this.isDataLoaded = true;
@@ -105,6 +106,10 @@ export class WordListPage {
 
     this.selectLevs = this.levs;
   }
+  
+    setLevelFlag(): void {
+      this.levFlag = !this.sc.randomed;
+    }
 
   setRandomFlag(): void {
     this.randomFlag = this.sc.randomed;
